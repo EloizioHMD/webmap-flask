@@ -4,37 +4,63 @@
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-6">
-        <h2 class="mb-4">Registro de Usuário</h2>
-        <form method="POST" action="{{ url_for('register') }}">
-            {{ form.hidden_tag() }}
-            
-            <div class="mb-3">
-                {{ form.username.label(class="form-label") }}
-                {{ form.username(class="form-control") }}
-                {% for error in form.username.errors %}
-                    <div class="invalid-feedback d-block">{{ error }}</div>
-                {% endfor %}
+        <div class="card shadow">
+            <div class="card-header" style="background-color: #4dab8e;">
+                <h2 class="mb-0 text-white text-center">Registro</h2>
             </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('register') }}">
+                    {{ form.hidden_tag() }}
+                    
+                    <div class="mb-3">
+                        {{ form.username.label(class="form-label") }}
+                        {{ form.username(class="form-control") }}
+                    </div>
 
-            <div class="mb-3">
-                {{ form.password.label(class="form-label") }}
-                {{ form.password(class="form-control") }}
-                {% for error in form.password.errors %}
-                    <div class="invalid-feedback d-block">{{ error }}</div>
-                {% endfor %}
+                    <div class="mb-3">
+                        {{ form.password.label(class="form-label") }}
+                        {{ form.password(class="form-control") }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form.confirm_password.label(class="form-label") }}
+                        {{ form.confirm_password(class="form-control") }}
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn" style="background-color: #4dab8e; color: white;">Registrar</button>
+                        <a href="{{ url_for('login') }}" class="btn btn-outline-secondary">Já tem conta? Login</a>
+                    </div>
+                </form>
             </div>
-
-            <div class="mb-3">
-                {{ form.confirm_password.label(class="form-label") }}
-                {{ form.confirm_password(class="form-control") }}
-                {% for error in form.confirm_password.errors %}
-                    <div class="invalid-feedback d-block">{{ error }}</div>
-                {% endfor %}
-            </div>
-
-            <button type="submit" class="btn btn-success">Registrar</button>
-            <a href="{{ url_for('login') }}" class="btn btn-link">Já tem conta? Login</a>
-        </form>
+        </div>
     </div>
 </div>
+
+<!-- Estilos Adicionais -->
+<style>
+    .btn {
+        transition: all 0.3s ease;
+    }
+    .btn:hover {
+        opacity: 0.9;
+    }
+    .btn-outline-secondary {
+        border-color: #4dab8e;
+        color: #4dab8e;
+    }
+    .btn-outline-secondary:hover {
+        background-color: #4dab8e;
+        color: white;
+    }
+    .card {
+    margin-top: 3rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .card {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+</style>
 {% endblock %}

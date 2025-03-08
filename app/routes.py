@@ -81,3 +81,8 @@ def logout():
 @login_required
 def webmap():
     return render_template('webmap.html')
+
+@app.route('/metadata')
+@login_required
+def metadata():
+    return render_template('metadata.html')

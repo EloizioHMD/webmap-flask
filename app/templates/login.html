@@ -2,31 +2,63 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <h2 class="mb-4">Login</h2>
-        <form method="POST" action="{{ url_for('login') }}">
-            {{ form.hidden_tag() }}
-            
-            <div class="mb-3">
-                {{ form.username.label(class="form-label") }}
-                {{ form.username(class="form-control") }}
-                {% for error in form.username.errors %}
-                    <div class="invalid-feedback d-block">{{ error }}</div>
-                {% endfor %}
+<div class="row justify-content-center mt-5">  <!-- Adicionado mt-5 para espaçamento superior -->
+    <div class="col-md-5">  <!-- Reduzido de col-md-6 para col-md-5 -->
+        <div class="card shadow">
+            <div class="card-header" style="background-color: #4dab8e;">
+                <h2 class="mb-0 text-white text-center">Login</h2>
             </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('login') }}">
+                    {{ form.hidden_tag() }}
+                    
+                    <div class="mb-3">
+                        {{ form.username.label(class="form-label") }}
+                        {{ form.username(class="form-control") }}
+                    </div>
 
-            <div class="mb-3">
-                {{ form.password.label(class="form-label") }}
-                {{ form.password(class="form-control") }}
-                {% for error in form.password.errors %}
-                    <div class="invalid-feedback d-block">{{ error }}</div>
-                {% endfor %}
+                    <div class="mb-3">
+                        {{ form.password.label(class="form-label") }}
+                        {{ form.password(class="form-control") }}
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn" style="background-color: #4dab8e; color: white;">Entrar</button>
+                        <a href="{{ url_for('register') }}" class="btn btn-outline-secondary">Criar conta</a>
+                    </div>
+                </form>
             </div>
-
-            <button type="submit" class="btn btn-primary">Entrar</button>
-            <a href="{{ url_for('register') }}" class="btn btn-link">Criar conta</a>
-        </form>
+        </div>
     </div>
 </div>
+
+<!-- Estilos Adicionais -->
+<style>
+    .card {
+        margin-top: 2rem;  /* Espaçamento adicional */
+    }
+    .btn {
+        transition: all 0.3s ease;
+    }
+    .btn:hover {
+        opacity: 0.9;
+    }
+    .btn-outline-secondary {
+        border-color: #4dab8e;
+        color: #4dab8e;
+    }
+    .btn-outline-secondary:hover {
+        background-color: #4dab8e;
+        color: white;
+    }
+    .card {
+    margin-top: 3rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    .card {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+</style>
 {% endblock %}

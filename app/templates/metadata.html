@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Metadados{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow">
+        <!-- Cabeçalho com cor principal -->
+        <div class="card-header" style="background-color: #4dab8e;">
+            <h4 class="mb-0 text-white">Metadados do Sistema</h4>
+        </div>
+
+        <!-- Corpo do card -->
+        <div class="card-body" style="background-color: #f8f9fa;">
+            <!-- Seção Fontes de Dados -->
+            <h5 style="color: #4dab8e;">Fontes de Dados</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" style="background-color: #e9ecef;">
+                    Limites de UC Federais - MMA/ICMBio
+                </li>
+                <li class="list-group-item" style="background-color: #e9ecef;">
+                    Base Cartográfica Contínua - IBGE
+                </li>
+                <li class="list-group-item" style="background-color: #e9ecef;">
+                    Imagens de Satélite - Landsat 9
+                </li>
+            </ul>
+
+            <!-- Seção Interpretação -->
+            <h5 class="mt-4" style="color: #4dab8e;">Interpretação dos Dados</h5>
+            <div class="alert" style="background-color: #e9ecef; border-color: #4dab8e;">
+                <strong style="color: #4dab8e;">Legenda:</strong>
+                <ul class="mb-0">
+                    <li>Áreas verdes: Unidades de Conservação Federais</li>
+                    <li>Linhas vermelhas: Limites estaduais</li>
+                    <li>Pontos azuis: Sedes administrativas</li>
+                </ul>
+            </div>
+
+            <!-- Seção Atualizações -->
+            <h5 class="mt-4" style="color: #4dab8e;">Atualizações</h5>
+            <p class="text-muted">
+                Dados atualizados em: 27/02/2025<br>
+                Próxima atualização prevista: 27/08/2025
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Estilos Adicionais -->
+<style>
+    .card {
+        border-color: #4dab8e;
+    }
+    .list-group-item {
+        border-color: #dee2e6;
+    }
+    .alert {
+        color: #495057;
+    }
+    h5 {
+        font-weight: 600;
+    }
+</style>
+{% endblock %}
