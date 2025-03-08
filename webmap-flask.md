@@ -1,6 +1,6 @@
 # Documentação do Projeto WebMap com Flask
 
-Este projeto implementa um sistema de controle de acesso para um WebMap usando Flask, SQLite e Flask-Login. O objetivo é proteger o acesso ao mapa com autenticação de usuários e garantir que todos os recursos (CSS, JS, layers) sejam carregados corretamente.
+Este projeto implementa um sistema de controle de acesso para um WebMap usando Flask, SQLite e Flask-Login. O objetivo é proteger o acesso ao mapa com autenticação de usuários e garantir que todos os recursos (CSS, JS, layers) sejam carregados corretamente. Além disso, foram realizadas melhorias na interface do usuário e na integração com o mapa gerado pelo QGIS.
 
 ---
 
@@ -18,7 +18,8 @@ projeto/
 │   │   ├── login.html
 │   │   ├── register.html
 │   │   ├── webmap.html
-│   │   └── admin_users.html
+│   │   ├── admin_users.html
+│   │   └── metadata.html
 │   └── static/
 │       └── qgis2web/
 │           ├── css/
@@ -89,6 +90,15 @@ flask shell
 
 - Rotas protegidas com `@login_required`.
 - Acesso administrativo restrito com `@admin_required`.
+
+### 4. **Integração com QGIS**
+
+- O mapa gerado pelo QGIS é integrado ao Flask e protegido por autenticação.
+- Todos os recursos (CSS, JS, layers) são carregados corretamente.
+
+### 5. **Página de Metadados**
+
+- Uma página estática detalha os metadados dos dados exibidos no mapa, incluindo fontes e interpretação.
 
 ---
 
@@ -170,6 +180,11 @@ def logout():
 def webmap():
     return render_template('webmap.html')
 
+@app.route('/metadata')
+@login_required
+def metadata():
+    return render_template('metadata.html')
+
 @app.route('/admin/users')
 @login_required
 def admin_users():
@@ -249,7 +264,7 @@ class RegistrationForm(FlaskForm):
 
 - Implementar confirmação por e-mail para novos registros.
 - Adicionar funcionalidades de recuperação de senha.
-- Integrar o WebMap gerado pelo QGIS.
+- Melhorar a integração com o WebMap gerado pelo QGIS.
 
 ---
 
@@ -268,3 +283,32 @@ Contribuições são bem-vindas! Siga os passos abaixo:
 ## Licença
 
 Este projeto está licenciado sob a MIT License. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## Novas Funcionalidades e Melhorias
+
+### 1. **Interface do Usuário**
+- **Barra de Navegação**: Cor de fundo alterada para `#4dab8e`.
+- **Botões**: Estilo consistente com tons de cinza e verde.
+- **Página de Login**: Card reduzido e espaçamento superior ajustado.
+
+### 2. **Página de Metadados**
+- Detalha as fontes dos dados e como interpretá-los.
+- Design harmonizado com o restante da aplicação.
+
+### 3. **Integração com QGIS**
+- Mapa gerado pelo QGIS integrado ao Flask.
+- Controles do mapa customizados com cores harmonizadas.
+
+### 4. **Melhorias de Segurança**
+- Proteção de rotas com autenticação.
+- Controle de acesso administrativo.
+
+---
+
+## Atualizações Futuras
+
+- Adicionar suporte para múltiplos mapas.
+- Implementar funcionalidades de busca e filtro no mapa.
+- Melhorar a documentação e testes automatizados.
