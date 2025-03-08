@@ -1,25 +1,5 @@
-attrs==25.1.0
-blinker @ file:///home/conda/feedstock_root/build_artifacts/blinker_1731096409132/work
-click @ file:///home/conda/feedstock_root/build_artifacts/click_1734858813237/work
-dnspython==2.7.0
-email_validator==2.2.0
-Flask @ file:///home/conda/feedstock_root/build_artifacts/flask_1731556349671/work
-Flask-Login @ file:///home/conda/feedstock_root/build_artifacts/flask-login_1733924427350/work
-Flask-SQLAlchemy @ file:///home/conda/feedstock_root/build_artifacts/bld/rattler-build_flask-sqlalchemy_1733868589/work
-Flask-WTF @ file:///home/conda/feedstock_root/build_artifacts/flask-wtf_1733920435077/work
-funcs==0.11.0
-greenlet @ file:///home/conda/feedstock_root/build_artifacts/greenlet_1734532774375/work
-idna==3.10
-importlib_metadata @ file:///home/conda/feedstock_root/build_artifacts/importlib-metadata_1737420181517/work
-itsdangerous @ file:///home/conda/feedstock_root/build_artifacts/itsdangerous_1733308265247/work
-Jinja2 @ file:///home/conda/feedstock_root/build_artifacts/jinja2_1741263328855/work
-MarkupSafe @ file:///home/conda/feedstock_root/build_artifacts/markupsafe_1733219680183/work
-named==1.4.2
-solus==1.2.2
-SQLAlchemy @ file:///home/conda/feedstock_root/build_artifacts/sqlalchemy_1738913114070/work
-typing-aliases==1.10.1
-typing_extensions @ file:///home/conda/feedstock_root/build_artifacts/typing_extensions_1733188668063/work
-Werkzeug @ file:///home/conda/feedstock_root/build_artifacts/werkzeug_1733160440960/work
-wraps==0.15.0
-WTForms @ file:///home/conda/feedstock_root/build_artifacts/wtforms_1733061487436/work
-zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1732827521216/work
+Flask==3.0.0
+Flask-SQLAlchemy==3.1.1
+Flask-Login==0.6.3
+Flask-WTF==1.2.1
+gunicorn==21.2.0
